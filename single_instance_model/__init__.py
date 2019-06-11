@@ -1,6 +1,5 @@
 from django.dispatch import receiver
 from django.db.backends.signals import connection_created
-from django.db.utils import OperationalError 
 from django.apps import apps
 from .models import SingleInstanceModel
 
@@ -14,5 +13,5 @@ def my_receiver(connection, **kwargs):
 					try:
 						if not model.objects.exists():
 							model.objects.create()
-					except OperationalError:
+					except:
 						pass
