@@ -15,7 +15,6 @@ setup(
     url='https://github.com/matix-io/django-single-instance-model',
     license='MIT',
     description='Always have exactly one instance of a model.',
-    long_description='',
     author='Connor Bode',
     author_email='connor@matix.io',  # SEE NOTE BELOW (*)
     packages=find_packages(),
@@ -23,5 +22,5 @@ setup(
     zip_safe=False,
     classifiers=[],
     long_description=long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
 )
