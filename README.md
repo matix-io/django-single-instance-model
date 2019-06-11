@@ -4,8 +4,6 @@
 
 We use Django for a lot of different things including CMS-style projects. In a CMS-style project, **the user often needs to be able to just modify some data that shows up on the site**. Maybe it's the content of a page.
 
-Django doesn't support this by default.  Here's a demo:
-
 ![](demo/demo.gif)
 
 The concept is simple: __There's always going to be exactly one instance of this model.__
@@ -26,7 +24,7 @@ from single_instance_model.models import SingleInstanceModel
 
 
 class AboutUs(models.Model, SingleInstanceModel):
-	text = models.TextField(max_length=2000)
+    text = models.TextField(max_length=2000)
 ```
 
 In `admin.py`:
@@ -39,7 +37,7 @@ from . import models
 
 @admin.register(models.AboutUs)
 class AboutUsAdmin(SingleInstanceModelAdmin):
-	pass
+    pass
 ```
 
 
