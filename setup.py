@@ -1,9 +1,13 @@
 from setuptools import setup, find_packages
+from os import path
 
 
 with open('VERSION.txt') as f:
     version = f.readline()
 
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name='django_single_instance_model',
@@ -18,4 +22,6 @@ setup(
     install_requires=[],
     zip_safe=False,
     classifiers=[],
+    long_description=long_description,
+    long_description_content_type='text/markdown'
 )
