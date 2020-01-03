@@ -1,6 +1,13 @@
 from django.contrib import admin
 from django.shortcuts import redirect
-from django.urls import reverse
+
+try:
+	# django 2.x
+	from django.urls import reverse
+
+except:
+	# django 1.x
+	from django.core.urlresolvers import reverse
 
 
 class SingleInstanceModelAdmin(admin.ModelAdmin):
